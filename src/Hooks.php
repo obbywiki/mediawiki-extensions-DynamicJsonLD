@@ -31,6 +31,15 @@ class Hooks {
             '@type'    => 'Article',
             'headline' => $title->getText(),
             'url'      => $fullUrl,
+            'publisher'=> [
+                '@type' => 'Organization',
+                'name' => $out->getConfig()->get( 'Sitename' ),
+                'url' => $out->getConfig()->get( 'Server' ),
+                'logo' => [
+                    '@type' => 'ImageObject',
+                    'url' => 'https://2q2bp9cu5u.ufs.sh/f/jHfjIa1SBA5f4hxgeYGmiArxKSEWbsm23Yk91zcNIwgoTvLU',
+                ]
+            ]
         ];
 
         if ( self::$mainEntity !== null ) {
