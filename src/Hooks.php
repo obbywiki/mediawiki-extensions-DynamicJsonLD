@@ -4,14 +4,25 @@ namespace MediaWiki\Extension\DynamicJsonLD;
 
 use OutputPage;
 use Skin;
+use ParserOutput;
 
 class Hooks {
     public static ?array $mainEntity = null;
     public static array $extraData = [];
     public static function onScribunto_LuaEngine_Setup( $engine ): void {
-        self::$mainEntity = null;
-        self::$extraData = [];
         $engine->getInterpreter()->executeString( 'require( "mw.ext.schemaOrg" )', 'DynamicJsonLD-autoload' );
+    }
+
+    public static function onOutputPageParserOutput( OutputPage $out, ParserOutput $parserOutput ): void {
+        $mainEntity = $parserOutput->getExtensionData( 'DynamicJsonLD:mainEntity' );
+        if ( $mainEntity ) {
+            self::$mainEntity = $mainEntity;
+        }
+
+        $extraData = $parserOutput->getExtensionData( 'DynamicJsonLD:extraData' );
+        if ( $extraData ) {
+            self::$extraData = array_merge( self::$extraData, $extraData );
+        }
     }
 
     public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ): bool {

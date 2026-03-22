@@ -16,7 +16,8 @@
 	"Hooks": {
 		"BeforePageDisplay": "MediaWiki\\Extension\\DynamicJsonLD\\Hooks::onBeforePageDisplay",
 		"ScribuntoExternalLibraries": "MediaWiki\\Extension\\DynamicJsonLD\\Hooks::onScribuntoExternalLibraries",
-		"Scribunto_LuaEngine_Setup": "MediaWiki\\Extension\\DynamicJsonLD\\Hooks::onScribunto_LuaEngine_Setup"
+		"Scribunto_LuaEngine_Setup": "MediaWiki\\Extension\\DynamicJsonLD\\Hooks::onScribunto_LuaEngine_Setup",
+		"OutputPageParserOutput": "MediaWiki\\Extension\\DynamicJsonLD\\Hooks::onOutputPageParserOutput"
 	},
 
 	"AutoloadClasses": {

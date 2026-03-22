@@ -20,12 +20,28 @@ class SchemaOrgLuaLibrary extends Scribunto_LuaLibraryBase {
     }
 
     public function setMainEntity( array $data ): array {
-        Hooks::$mainEntity = $this->cleanLuaTable( $data );
+        $cleanData = $this->cleanLuaTable( $data );
+        Hooks::$mainEntity = $cleanData;
+        
+        $parser = $this->getParser();
+        if ( $parser ) {
+            $parser->getOutput()->setExtensionData( 'DynamicJsonLD:mainEntity', $cleanData );
+        }
+        
         return [];
     }
 
     public function addData( array $data ): array {
-        Hooks::$extraData[] = $this->cleanLuaTable( $data );
+        $cleanData = $this->cleanLuaTable( $data );
+        Hooks::$extraData[] = $cleanData;
+        
+        $parser = $this->getParser();
+        if ( $parser ) {
+            $existing = $parser->getOutput()->getExtensionData( 'DynamicJsonLD:extraData' ) ?: [];
+            $existing[] = $cleanData;
+            $parser->getOutput()->setExtensionData( 'DynamicJsonLD:extraData', $existing );
+        }
+        
         return [];
     }
 

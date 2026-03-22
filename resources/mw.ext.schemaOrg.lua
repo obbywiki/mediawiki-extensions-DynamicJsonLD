@@ -17,9 +17,9 @@ function schemaOrg.setupInterface()
 
     mw = mw or {}
     mw.ext = mw.ext or {}
-    mw.ext.schemaOrg = schemaOrg
+    mw.ext.jsonld = schemaOrg
 
-    package.loaded['mw.ext.schemaOrg'] = schemaOrg
+    package.loaded['mw.ext.jsonld'] = schemaOrg
 end
 
 return schemaOrg
