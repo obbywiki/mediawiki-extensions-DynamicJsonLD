@@ -24,13 +24,21 @@ class Hooks {
 
     public static function onBeforePageDisplay( OutputPage $out, Skin $skin ): void {
         $title = $out->getTitle();
-        $fullUrl = $title->getFullURL();
+        $fullURL = $title->getFullURL();
+
+        if ( $skin->getRequest()->getVal( 'action', 'view' ) !== 'view' ) {
+			return;
+		}
+
+        if ( !$title->exists() ) {
+            return;
+        }
 
         $data = [
             '@context' => 'https://schema.org',
             '@type'    => 'Article',
             'headline' => $title->getText(),
-            'url'      => $fullUrl,
+            'url'      => $fullURL,
             'publisher'=> [
                 '@type' => 'Organization',
                 'name' => $out->getConfig()->get( 'Sitename' ),
