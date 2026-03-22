@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+	"name": "DynamicJsonLD",
+	"description": "Dynamic JSON-LD for MediaWiki. Adds scribunto support and a boilerplate article JSON-LD template. Requires SchemaOrg to be disabled if using WikiSEO.",
+	"author": ["[https://obbywiki.com ObbyWiki]"],
+	"version": "0.1.0",
+	"license-name": "MIT",
+	"url": "https://github.com/obbywiki/mediawiki-extensions-DynamicJsonLD",
+
+	"type": "other",
+
+	"requires": {
+		"MediaWiki": ">=1.45.1"
+	},
+
+	"Hooks": {
+		"BeforePageDisplay": "MediaWiki\\Extension\\DynamicJsonLD\\Hooks::onBeforePageDisplay",
+		"ScribuntoExternalLibraries": "MediaWiki\\Extension\\DynamicJsonLD\\Hooks::onScribuntoExternalLibraries",
+		"Scribunto_LuaEngine_Setup": "MediaWiki\\Extension\\DynamicJsonLD\\Hooks::onScribunto_LuaEngine_Setup"
+	},
+
+	"AutoloadClasses": {
+		"MediaWiki\\Extension\\DynamicJsonLD\\Hooks": "src/Hooks.php",
+		"MediaWiki\\Extension\\DynamicJsonLD\\SchemaOrgLuaLibrary": "src/SchemaOrgLuaLibrary.php"
+	},
+
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\DynamicJsonLD\\": "src/"
+	}
+}
