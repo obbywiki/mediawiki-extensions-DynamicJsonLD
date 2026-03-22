@@ -7,7 +7,7 @@
 	"license-name": "MIT",
 	"url": "https://github.com/obbywiki/mediawiki-extensions-DynamicJsonLD",
 
-	"type": "other",
+	"type": "parserhook",
 
 	"requires": {
 		"MediaWiki": ">=1.45.1"

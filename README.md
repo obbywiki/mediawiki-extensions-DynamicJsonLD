@@ -2,6 +2,14 @@
 
 does something
 
+## Usage
+
+Requires the SchemaOrg metadata generator to be disabled if using WikiSEO.
+
+```php
+$wgMetadataGenerators = ['OpenGraph', 'Twitter'];
+```
+
 # TODO
 
-* Rename from SchemaOrgLuaLibrary to DynamicJsonLDLuaLibrary or something better, later
+* No TODO tasks left!
