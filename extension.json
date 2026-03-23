@@ -22,7 +22,7 @@
 
 	"AutoloadClasses": {
 		"MediaWiki\\Extension\\DynamicJsonLD\\Hooks": "src/Hooks.php",
-		"MediaWiki\\Extension\\DynamicJsonLD\\SchemaOrgLuaLibrary": "src/SchemaOrgLuaLibrary.php"
+		"MediaWiki\\Extension\\DynamicJsonLD\\JsonLDLuaLibrary": "src/JsonLDLuaLibrary.php"
 	},
 
 	"AutoloadNamespaces": {

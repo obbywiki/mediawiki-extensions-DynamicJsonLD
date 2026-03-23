@@ -10,7 +10,7 @@ class Hooks {
     public static ?array $mainEntity = null;
     public static array $extraData = [];
     public static function onScribunto_LuaEngine_Setup( $engine ): void {
-        $engine->getInterpreter()->executeString( 'require( "mw.ext.schemaOrg" )', 'DynamicJsonLD-autoload' );
+        $engine->getInterpreter()->executeString( 'require( "mw.ext.JsonLD" )', 'DynamicJsonLD-autoload' );
     }
 
     public static function onOutputPageParserOutput( OutputPage $out, ParserOutput $parserOutput ): void {
@@ -27,7 +27,7 @@ class Hooks {
 
     public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ): bool {
         if ( $engine == 'lua' ) {
-            $extraLibraries['mw.ext.schemaOrg'] = SchemaOrgLuaLibrary::class;
+            $extraLibraries['mw.ext.JsonLD'] = JsonLDLuaLibrary::class;
         }
         
         return true;
@@ -56,7 +56,7 @@ class Hooks {
                 'url' => $out->getConfig()->get( 'Server' ),
                 'logo' => [
                     '@type' => 'ImageObject',
-                    'url' => 'https://2q2bp9cu5u.ufs.sh/f/jHfjIa1SBA5f4hxgeYGmiArxKSEWbsm23Yk91zcNIwgoTvLU',
+                    'url' => $out->getConfig()->get( 'Logos' ) && $out->getConfig()->get( 'Logos' )['1x'] ? $out->getConfig()->get( 'Logos' )['1x'] : '',
                 ]
             ]
         ];
@@ -76,7 +76,7 @@ class Hooks {
         $json = json_encode( $data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
 
         $out->addHeadItem(
-            'schemaOrg',
+            'JsonLD',
             '<script type="application/ld+json">' . $json . '</script>'
         );
     }

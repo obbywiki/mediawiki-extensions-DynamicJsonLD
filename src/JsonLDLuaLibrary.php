@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\DynamicJsonLD;
 
 use Scribunto_LuaLibraryBase;
 
-class SchemaOrgLuaLibrary extends Scribunto_LuaLibraryBase {
+class JsonLDLuaLibrary extends Scribunto_LuaLibraryBase {
 
     public function register(): array {
         $lib = [
@@ -13,7 +13,7 @@ class SchemaOrgLuaLibrary extends Scribunto_LuaLibraryBase {
         ];
 
         return $this->getEngine()->registerInterface(
-            __DIR__ . '/../resources/mw.ext.schemaOrg.lua',
+            __DIR__ . '/../resources/mw.ext.JsonLD.lua',
             $lib,
             []
         );
