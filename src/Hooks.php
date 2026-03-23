@@ -49,6 +49,7 @@ class Hooks {
             '@context' => 'https://schema.org',
             '@type'    => 'Article',
             'headline' => $title->getText(),
+            'name' => $title->getText(),
             'url'      => $fullURL,
             'publisher'=> [
                 '@type' => 'Organization',
