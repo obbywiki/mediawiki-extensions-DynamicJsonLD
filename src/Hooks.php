@@ -45,9 +45,11 @@ class Hooks {
             return;
         }
 
+        $type = $title->inNamespace( NS_CATEGORY ) ? 'CollectionPage' : 'Article';
+
         $data = [
             '@context' => 'https://schema.org',
-            '@type'    => 'Article',
+            '@type'    => $type,
             'headline' => $title->getText(),
             'name' => $title->getText(),
             'url'      => $fullURL,
