@@ -62,10 +62,6 @@ JsonLD.addData( {
 } )
 ```
 
-# TODO
-
-* No TODO tasks left!
-
 ---
 
-[ObbyWiki OSS](https://obbywiki.github.io/)
+[ObbyWiki OSS](https://obbywiki.github.io/) - [Obby Wiki](https://obby.wiki)
