@@ -5,7 +5,7 @@
 	"author": ["[https://obbywiki.com ObbyWiki]"],
 	"version": "0.1.0",
 	"license-name": "GPL-3.0-or-later",
-	"url": "https://github.com/obbywiki/mediawiki-extensions-DynamicJsonLD",
+	"url": "https://www.mediawiki.org/wiki/Extension:DynamicJsonLD",
 
 	"type": "parserhook",
 
