@@ -1,10 +1,10 @@
-# DynamicJsonLD
+# [DynamicJsonLD](https://www.mediawiki.org/wiki/Extension:DynamicJsonLD)
 
 Adds a Scribunto Lua API for adding JSON-LD data to pages, along with a boilerplate JSON-LD template.
 
 ## Installation
 
-DynamicJsonLD required MediaWiki 1.43 or later.
+DynamicJsonLD requires MediaWiki 1.43 LTS or later.
 
 You can use Git to install DynamicJsonLD in your MediaWiki extensions folder:
 
