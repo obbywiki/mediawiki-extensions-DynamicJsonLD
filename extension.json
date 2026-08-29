@@ -3,7 +3,7 @@
 	"name": "DynamicJsonLD",
 	"description": "Dynamic JSON-LD for MediaWiki. Adds scribunto support and a boilerplate article JSON-LD template. Requires SchemaOrg to be disabled if using WikiSEO.",
 	"author": [
-		"[https://obbywiki.com ObbyWiki]"
+		"[https://obby.wiki The Obby Wiki]"
 	],
 	"version": "0.2.0",
 	"license-name": "GPL-3.0-or-later",
