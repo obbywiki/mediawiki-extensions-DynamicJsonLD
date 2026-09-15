@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/obbywiki/mediawiki-extensions-DynamicJsonLD/compare/v0.2.0...v0.2.1) (2026-09-15)
+
+
+### Bug Fixes
+
+* i forgot but this fixes something ([89b8d8b](https://github.com/obbywiki/mediawiki-extensions-DynamicJsonLD/commit/89b8d8b38524b0778f2e4eb9378f5a39d38f09ff))
+
 ## [0.2.0](https://github.com/obbywiki/mediawiki-extensions-DynamicJsonLD/compare/v0.1.0...v0.2.0) (2026-08-29)
 
 
