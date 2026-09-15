@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\DynamicJsonLD;
 
-use Scribunto_LuaLibraryBase;
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LibraryBase;
 
-class JsonLDLuaLibrary extends Scribunto_LuaLibraryBase {
+class JsonLDLuaLibrary extends LibraryBase {
 
     public function register(): array {
         $lib = [
